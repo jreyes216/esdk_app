@@ -40,8 +40,8 @@ app.post('/add', function(req,res){
 ////
 
 ////
-var port = process.env.PORT || 3000;
-
-app.listen(port,function(){
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '';
+app.listen(port, ipaddress ,function(){
 	console.log('connected'+port);
 });
